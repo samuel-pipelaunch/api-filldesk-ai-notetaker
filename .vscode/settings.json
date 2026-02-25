@@ -1,0 +1,29 @@
+{
+  // ── Copilot Agent Orchestration (REQUIRED) ──────────────────────────
+  "chat.agent.enabled": true,
+  "chat.customAgentInSubagent.enabled": true,
+  "chat.useAgentSkills": true,
+  "chat.agent.maxRequests": 64,
+
+  // ── Agent & Prompt File Locations ───────────────────────────────────
+  "chat.agentFilesLocations": [".github/agents"],
+  "chat.promptFilesLocations": [".github/prompts"],
+  "chat.agentSkillsLocations": [".github/skills"],
+
+  // ── Editor Defaults ─────────────────────────────────────────────────
+  "editor.formatOnSave": true,
+
+  // ── Markdown ────────────────────────────────────────────────────────
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  },
+
+  // ── Search Exclusions ───────────────────────────────────────────────
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/coverage": true
+  }
+}

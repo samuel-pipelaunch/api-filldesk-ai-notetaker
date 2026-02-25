@@ -18,7 +18,7 @@ We define 7 specialized agents in `.github/agents/`, each with a specific model 
 
 | Agent | Model | Role | Implements Code? |
 |-------|-------|------|-----------------|
-| **Orchestrator** | Claude Sonnet 4.6 | Breaks down requests, delegates to specialists | No |
+| **Orchestrator** | Claude Opus 4.6 | Breaks down requests, delegates to specialists | No |
 | **Planner** | GPT-5.3-Codex | Research, architecture, implementation plans | No |
 | **Coder** | GPT-5.3-Codex | Writes production code | Yes |
 | **Designer** | Gemini 3 Pro | UI/UX design, visual design, accessibility | Yes (UI only) |

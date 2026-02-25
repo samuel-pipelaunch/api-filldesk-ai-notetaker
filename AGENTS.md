@@ -28,7 +28,7 @@ Always run these before considering work complete:
 
 | Agent          | Model             | Role                                            |
 | -------------- | ----------------- | ----------------------------------------------- |
-| `orchestrator` | Claude Sonnet 4.6 | Delegates work to specialists, never implements |
+| `orchestrator` | Claude Opus 4.6 | Delegates work to specialists, never implements |
 | `planner`      | GPT-5.3-Codex     | Research, architecture, implementation plans    |
 | `coder`        | GPT-5.3-Codex     | Writes production code                          |
 | `designer`     | Gemini 3 Pro      | UI/UX design, visual design, accessibility      |
@@ -42,7 +42,7 @@ Always run these before considering work complete:
 User Request
     │
     ▼
-Orchestrator (Claude Sonnet 4.6)
+Orchestrator (Claude Opus 4.6)
     │
     ├──► Planner (GPT-5.3-Codex)
     │       │
@@ -71,7 +71,7 @@ Orchestrator (Claude Sonnet 4.6)
 
 | Model                 | Best For                               | Used By                          |
 | --------------------- | -------------------------------------- | -------------------------------- |
-| **Claude Sonnet 4.6** | Reasoning, coordination, analysis      | Orchestrator                     |
+| **Claude Opus 4.6**   | Reasoning, coordination, analysis      | Orchestrator                     |
 | **Claude Opus 4.6**   | Deep reasoning, thorough code review   | Reviewer                         |
 | **GPT-5.3-Codex**     | Code generation, speed, cost-effective | Planner, Coder, Tester, Debugger |
 | **Gemini 3 Pro**      | UI/UX design, visual creativity        | Designer                         |

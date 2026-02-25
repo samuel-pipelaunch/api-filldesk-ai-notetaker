@@ -25,5 +25,8 @@
     "**/dist": true,
     "**/build": true,
     "**/coverage": true
+  },
+  "chat.tools.terminal.autoApprove": {
+    "mkdir": true
   }
 }

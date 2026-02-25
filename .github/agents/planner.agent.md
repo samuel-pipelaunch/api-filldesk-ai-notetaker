@@ -2,7 +2,8 @@
 name: Planner
 description: Creates implementation plans by researching the codebase and consulting documentation. Never writes code.
 model: GPT-5.3-Codex (copilot)
-tools: ["search", "codebase", "fetch", "findTestFiles", "githubRepo"]
+tools:
+  ["search", "codebase", "fetch", "findTestFiles", "githubRepo", "editFiles"]
 ---
 
 # Planning Agent

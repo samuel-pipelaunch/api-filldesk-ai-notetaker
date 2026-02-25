@@ -1,7 +1,7 @@
 ---
 name: Orchestrator
 description: Breaks down requests into tasks and delegates to specialist agents. Never implements anything.
-model: Claude Sonnet 4.6 (copilot)
+model: Claude Opus 4.6 (copilot)
 tools: ["search", "codebase", "fetch", "findTestFiles", "githubRepo"]
 ---
 

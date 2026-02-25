@@ -84,6 +84,30 @@ These principles apply regardless of the tech stack chosen:
 - Keep tests simple and focused on verifying observable behavior
 - Always validate inputs at system boundaries
 
+## Infrastructure
+
+FillDesk AI Notetaker uses **AWS** with a multi-account stage strategy, deployed via **GitHub Actions**.
+
+### AWS Accounts
+
+| Stage        | Account ID                           | Purpose            |
+| ------------ | ------------------------------------ | ------------------ |
+| Personal Dev | Per-developer (e.g., `588738567629`) | Individual sandbox |
+| Staging      | `471112515517`                       | Pre-production     |
+| Production   | `975050325894`                       | Live environment   |
+
+### Key Details
+
+- **AWS SSO** via Google — Start URL: `https://pipelaunch.awsapps.com/start/#/?tab=accounts`
+- **CI/CD**: GitHub Actions with OIDC authentication to AWS (no long-lived keys)
+- **Environments**: `staging` and `prod` in GitHub Actions (dev is manual deployment)
+- **Regions**: `us-east-1` (primary), `eu-west-1`
+- **Promotion**: Personal Dev → Staging → Production
+
+### Infrastructure Skill
+
+Full infrastructure documentation including account topology, SSO setup, deployment patterns, and IaC guidelines is in `.github/skills/aws-infrastructure/`. Any agent or developer working on infrastructure or deployments should read that skill.
+
 ## Commit Convention
 
 Conventional Commits: `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`

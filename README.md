@@ -24,7 +24,7 @@ This project uses a multi-agent orchestration system with GitHub Copilot. See:
 
 - [AGENTS.md](AGENTS.md) — Agent workflow and orchestration overview
 - [.github/copilot-instructions.md](.github/copilot-instructions.md) — Project-wide coding standards
-- [.github/agents/](.github/agents/) — 7 specialized agents (orchestrator, planner, coder, designer, reviewer, tester, debugger)
+- [.github/agents/](.github/agents/) — 8 specialized agents (orchestrator, planner, coder, designer, reviewer, tester, debugger, documentarian)
 - [.github/prompts/](.github/prompts/) — Reusable prompt templates
 - [.github/skills/](.github/skills/) — Domain skills (Recall.ai, API design, code quality, testing, security)
 
@@ -45,13 +45,14 @@ This project uses a multi-agent orchestration system with GitHub Copilot. See:
 
 | Agent | Model | Role |
 |-------|-------|------|
-| Orchestrator | Claude Sonnet 4.6 | Delegates work, never implements |
+| Orchestrator | Claude Opus 4.6 | Delegates work, never implements |
 | Planner | GPT-5.3-Codex | Research + implementation plans |
 | Coder | GPT-5.3-Codex | Writes production code |
 | Designer | Gemini 3 Pro | UI/UX design |
-| Reviewer | Claude Sonnet 4.6 | Code review + quality gates |
+| Reviewer | Claude Opus 4.6 | Code review + quality gates |
 | Tester | GPT-5.3-Codex | Writes and runs tests |
 | Debugger | GPT-5.3-Codex | Bug diagnosis and fixes |
+| Documentarian | Claude Opus 4.6 | Maintains instructions, skills, prompts, docs |
 
 ## Environment Variables
 

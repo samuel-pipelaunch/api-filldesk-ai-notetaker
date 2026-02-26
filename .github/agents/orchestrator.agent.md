@@ -17,6 +17,7 @@ These are the only agents you can call. Each has a specific role:
 - **Tester** — Writes and runs tests
 - **Reviewer** — Reviews code for quality and correctness
 - **Debugger** — Diagnoses and fixes reproducible bugs
+- **Documentarian** — Maintains AI knowledge infrastructure (instructions, skills, prompts, agent definitions, project docs)
 
 ## Execution Model
 
@@ -63,9 +64,20 @@ For each phase:
 
 After all implementation phases complete, call the **Reviewer** agent to validate quality.
 
-### Step 5: Verify and Report
+### Step 5: Documentation
 
-After review passes (or issues are fixed), report final results to the user.
+After review passes, evaluate whether the changes require documentation updates. Call the **Documentarian** agent if any of these are true:
+
+- New patterns, conventions, or architectural decisions were introduced
+- A new integration or external API was added (may need a new skill)
+- Existing instructions or skills may be stale after the changes
+- Project overview docs (AGENTS.md, README.md) need updating
+
+Skip the Documentarian if the change is a small bug fix or minor refactor with no documentation impact.
+
+### Step 6: Verify and Report
+
+After review passes (and documentation is updated if needed), report final results to the user.
 
 ## Parallelization Rules
 

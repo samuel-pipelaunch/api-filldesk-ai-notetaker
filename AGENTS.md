@@ -26,15 +26,16 @@ Always run these before considering work complete:
 
 ## Custom Agents
 
-| Agent          | Model             | Role                                            |
-| -------------- | ----------------- | ----------------------------------------------- |
-| `orchestrator` | Claude Opus 4.6 | Delegates work to specialists, never implements |
-| `planner`      | GPT-5.3-Codex     | Research, architecture, implementation plans    |
-| `coder`        | GPT-5.3-Codex     | Writes production code                          |
-| `designer`     | Gemini 3 Pro      | UI/UX design, visual design, accessibility      |
-| `reviewer`     | Claude Opus 4.6   | Code review, security, performance, quality     |
-| `tester`       | GPT-5.3-Codex     | Writes and runs tests                           |
-| `debugger`     | GPT-5.3-Codex     | Bug diagnosis, reproduce → fix → verify         |
+| Agent           | Model             | Role                                            |
+| --------------- | ----------------- | ----------------------------------------------- |
+| `orchestrator`  | Claude Opus 4.6   | Delegates work to specialists, never implements |
+| `planner`       | GPT-5.3-Codex     | Research, architecture, implementation plans    |
+| `coder`         | GPT-5.3-Codex     | Writes production code                          |
+| `designer`      | Gemini 3 Pro      | UI/UX design, visual design, accessibility      |
+| `reviewer`      | Claude Opus 4.6   | Code review, security, performance, quality     |
+| `tester`        | GPT-5.3-Codex     | Writes and runs tests                           |
+| `debugger`      | GPT-5.3-Codex     | Bug diagnosis, reproduce → fix → verify         |
+| `documentarian` | Claude Opus 4.6   | Maintains AI knowledge: instructions, skills, prompts, docs |
 
 ## Agent Workflow
 
@@ -61,26 +62,30 @@ Orchestrator (Claude Opus 4.6)
     │
     ├──► Reviewer (Claude Opus 4.6) → quality gate
     │       │
-    │       ├── Pass → Report completion
+    │       ├── Pass → continue
     │       └── Fail → Route back to Coder/Debugger for fixes
+    │
+    ├──► Documentarian (Claude Opus 4.6) → update instructions, skills, prompts, docs (if needed)
     │
     └──► Report results to user
 ```
 
 ## Model Selection Rationale
 
-| Model                 | Best For                               | Used By                          |
-| --------------------- | -------------------------------------- | -------------------------------- |
-| **Claude Opus 4.6**   | Reasoning, coordination, analysis      | Orchestrator                     |
-| **Claude Opus 4.6**   | Deep reasoning, thorough code review   | Reviewer                         |
-| **GPT-5.3-Codex**     | Code generation, speed, cost-effective | Planner, Coder, Tester, Debugger |
-| **Gemini 3 Pro**      | UI/UX design, visual creativity        | Designer                         |
+| Model                 | Best For                               | Used By                                   |
+| --------------------- | -------------------------------------- | ----------------------------------------- |
+| **Claude Opus 4.6**   | Reasoning, coordination, analysis      | Orchestrator                              |
+| **Claude Opus 4.6**   | Deep reasoning, thorough code review   | Reviewer                                  |
+| **Claude Opus 4.6**   | Writing, codebase analysis, knowledge  | Documentarian                             |
+| **GPT-5.3-Codex**     | Code generation, speed, cost-effective | Planner, Coder, Tester, Debugger          |
+| **Gemini 3 Pro**      | UI/UX design, visual creativity        | Designer                                  |
 
 ## Hard Boundaries
 
 - **Orchestrator**: No direct implementation. Delegation only.
 - **Planner**: No code writing. Plans and research only.
 - **Reviewer**: No code writing. Feedback only.
+- **Documentarian**: No production code or tests. Only documentation, instructions, skills, and prompts.
 - **Debugger**: No speculative fixes. Must reproduce first.
 - **Designer**: No business logic or backend changes.
 - **Coder/Tester**: Follow repository patterns and delegated scope.

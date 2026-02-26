@@ -22,13 +22,13 @@ We define 7 specialized agents in `.github/agents/`, each with a specific model 
 | **Planner** | GPT-5.3-Codex | Research, architecture, implementation plans | No |
 | **Coder** | GPT-5.3-Codex | Writes production code | Yes |
 | **Designer** | Gemini 3 Pro | UI/UX design, visual design, accessibility | Yes (UI only) |
-| **Reviewer** | Claude Sonnet 4.6 | Code review, security, quality gates | No |
+| **Reviewer** | Claude Opus 4.6 | Code review, security, quality gates | No |
 | **Tester** | GPT-5.3-Codex | Writes and runs tests | Yes |
 | **Debugger** | GPT-5.3-Codex | Bug diagnosis, reproduce → fix → verify | Yes |
 
 ### Model Selection Rationale
 
-- **Claude Sonnet 4.6**: Best at reasoning, coordination, analysis — used for orchestration and review
+- **Claude Opus 4.6**: Best at reasoning, coordination, analysis — used for orchestration and review
 - **GPT-5.3-Codex**: Fast, capable code generation at 1x cost — used for all coding tasks
 - **Gemini 3 Pro**: Best at visual/creative design work — used exclusively for Designer
 

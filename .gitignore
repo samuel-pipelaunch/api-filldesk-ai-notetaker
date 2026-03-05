@@ -1,37 +1,11 @@
-# Dependencies
-node_modules/
-.pnpm-store/
-
-# Next.js
-.next/
-out/
-
-# Build
-dist/
-build/
-
-# Environment
+node_modules
+dist
+.turbo
 .env
 .env.local
-.env.production.local
-
-# IDE
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-
-# Testing
-coverage/
-test-results/
-playwright-report/
-blob-report/
-
-# Misc
-*.tsbuildinfo
-next-env.d.ts
+.env.*.local
+*.js.map
+coverage
+.next
+out
+cdk.out

@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "noEmit": false,
+    "types": ["node"],
+    "paths": {
+      "@filldesk/shared-types": ["../../packages/shared-types/src/index.ts"],
+      "@filldesk/shared-types/*": ["../../packages/shared-types/src/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "references": [{ "path": "../../packages/shared-types" }]
+}

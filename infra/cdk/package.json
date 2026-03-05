@@ -1,0 +1,26 @@
+{
+  "name": "@filldesk/infra",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy",
+    "diff": "cdk diff",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo \"No lint configured for infra\"",
+    "test": "echo \"No tests configured for infra\""
+  },
+  "dependencies": {
+    "@aws-sdk/client-rds": "^3.887.0",
+    "aws-cdk-lib": "^2.179.0",
+    "constructs": "^10.4.2"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1009.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}

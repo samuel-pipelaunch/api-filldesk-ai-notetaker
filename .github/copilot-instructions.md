@@ -22,16 +22,17 @@ This project uses a multi-agent orchestration system. See `AGENTS.md` for the fu
 
 ### Quick Reference
 
-| Agent             | Model           | Role                                              |
-| ----------------- | --------------- | ------------------------------------------------- |
-| **Orchestrator**  | Claude Opus 4.6 | Delegates work, never implements                  |
-| **Planner**       | GPT-5.3-Codex   | Research + implementation plans                   |
-| **Coder**         | GPT-5.3-Codex   | Writes production code                            |
-| **Designer**      | Gemini 3 Pro    | UI/UX design                                      |
-| **Reviewer**      | Claude Opus 4.6 | Code review + quality gates                       |
-| **Tester**        | GPT-5.3-Codex   | Writes and runs tests                             |
-| **Debugger**      | GPT-5.3-Codex   | Bug diagnosis and fixes                           |
-| **Documentarian** | Claude Opus 4.6 | Maintains instructions, skills, prompts, and docs |
+| Agent             | Model           | Role                                                 |
+| ----------------- | --------------- | ---------------------------------------------------- |
+| **Orchestrator**  | Claude Opus 4.6 | Delegates work, never implements                     |
+| **Planner**       | GPT-5.3-Codex   | Research + implementation plans                      |
+| **Coder**         | GPT-5.3-Codex   | Writes production code                               |
+| **Designer**      | Gemini 3.1 Pro  | UI/UX design                                         |
+| **Reviewer**      | Claude Opus 4.6 | Code review + quality gates                          |
+| **Tester**        | GPT-5.3-Codex   | Writes and runs tests                                |
+| **Debugger**      | GPT-5.3-Codex   | Bug diagnosis and fixes                              |
+| **Architect**     | Claude Opus 4.6 | Multi-model architecture advisor (Claude+Gemini+GPT) |
+| **Documentarian** | Claude Opus 4.6 | Maintains instructions, skills, prompts, and docs    |
 
 ### Workflow
 

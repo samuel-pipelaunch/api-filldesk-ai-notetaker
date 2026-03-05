@@ -48,7 +48,7 @@ This project uses a multi-agent orchestration system with GitHub Copilot. See:
 | Orchestrator | Claude Opus 4.6 | Delegates work, never implements |
 | Planner | GPT-5.3-Codex | Research + implementation plans |
 | Coder | GPT-5.3-Codex | Writes production code |
-| Designer | Gemini 3 Pro | UI/UX design |
+| Designer | Gemini 3.1 Pro | UI/UX design |
 | Reviewer | Claude Opus 4.6 | Code review + quality gates |
 | Tester | GPT-5.3-Codex | Writes and runs tests |
 | Debugger | GPT-5.3-Codex | Bug diagnosis and fixes |

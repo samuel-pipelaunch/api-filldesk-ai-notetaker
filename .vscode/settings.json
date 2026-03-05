@@ -1,6 +1,7 @@
 {
   // ── Copilot Agent Orchestration (REQUIRED) ──────────────────────────
   "chat.agent.enabled": true,
+  "chat.useAgentsMdFile": true,
   "chat.customAgentInSubagent.enabled": true,
   "chat.useAgentSkills": true,
   "chat.agent.maxRequests": 64,

@@ -41,7 +41,7 @@ For FillDesk AI Notetaker, our integration choices are:
 
 | Variable                     | Purpose                                                                                        |
 | ---------------------------- | ---------------------------------------------------------------------------------------------- |
-| `RECALL_API_KEY_US`          | API key for US region (`us-east-1.recall.ai` primary US region, equivalent to `api.recall.ai`) |
+| `RECALL_API_KEY_US`          | API key for US region (`us-west-2.recall.ai` primary US region, equivalent to `api.recall.ai`) |
 | `RECALL_API_KEY_EU`          | API key for EU region (`eu-central-1.recall.ai`)                                               |
 | `RECALL_WEBHOOK_SECRET`      | Workspace verification secret for webhook verification                                         |
 | `GOOGLE_OAUTH_CLIENT_ID`     | Google OAuth 2.0 client ID                                                                     |
@@ -51,7 +51,7 @@ For FillDesk AI Notetaker, our integration choices are:
 
 | Region  | Base URL                                                    |
 | ------- | ----------------------------------------------------------- |
-| US East | https://us-east-1.recall.ai (`api.recall.ai` is equivalent) |
+| US East | https://us-west-2.recall.ai (`api.recall.ai` is equivalent) |
 | EU      | https://eu-central-1.recall.ai                              |
 
 ## Official Recall.ai Resources

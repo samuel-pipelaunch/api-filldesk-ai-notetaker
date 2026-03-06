@@ -7,7 +7,7 @@ Sources: https://docs.recall.ai/docs/receive-a-recording, https://docs.recall.ai
 When creating a bot, specify `recording_config`:
 
 ```bash
-curl -X POST "https://us-east-1.recall.ai/api/v1/bot/" \
+curl -X POST "https://us-west-2.recall.ai/api/v1/bot/" \
   -H "Authorization: $RECALL_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

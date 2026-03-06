@@ -32,7 +32,7 @@ Handling different prompts per client/ATS requires a structured configuration sy
 
 ### 5. Data Residency, Security & Multi-Tenancy
 Your instinct to separate US and EU regions is correct for GDPR compliance.
-*   **Infrastructure:** Use separate AWS accounts or distinct regional endpoints (e.g., `us-east-1` and `eu-west-1`). The Salesforce Named Credential should point to the correct regional API.
+*   **Infrastructure:** Use separate AWS accounts or distinct regional endpoints (e.g., `us-west-2` and `eu-west-1`). The Salesforce Named Credential should point to the correct regional API.
 *   **Data Isolation:** A database-per-tenant is likely too expensive right now. Use a shared database with **Logical Isolation** (strict Row-Level Security in PostgreSQL using `tenant_id`) combined with **Physical Isolation** for media (dedicated S3 buckets/prefixes per region and tenant).
 *   **Encryption:** Use AWS KMS to encrypt OAuth tokens, transcripts, and recordings at rest. Ensure your JWT API keys are scoped strictly by `org_id` + `user_id`.
 
@@ -430,7 +430,7 @@ Relying solely on email will result in orphaned transcripts (e.g., candidates us
 *   **Verification:** LLMs hallucinate. Your UI must link extracted data points directly to the transcript timestamps so recruiters can verify the source of the extraction.
 
 **Security, Regions, and Multi-tenancy**
-Your infrastructure plan (AWS `us-east-1` and `eu-west-1`) supports this.
+Your infrastructure plan (AWS `us-west-2` and `eu-west-1`) supports this.
 *   **Routing:** Provide different API endpoints for US and EU. The Salesforce Named Credential should point to the correct regional endpoint.
 *   **Data Isolation:** Separate databases per client are expensive and hard to maintain. Use **Logical Isolation** (a `tenant_id` on every table with Row-Level Security in PostgreSQL) combined with **Physical Isolation for Media** (dedicated S3 prefixes or buckets per tenant for recordings).
 

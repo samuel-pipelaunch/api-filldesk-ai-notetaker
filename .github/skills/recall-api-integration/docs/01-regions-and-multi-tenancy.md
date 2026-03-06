@@ -6,7 +6,7 @@ This document defines how FillDesk AI Notetaker uses Recall.ai regions and imple
 
 Recall.ai currently supports multiple regions:
 
-- **US East** (`us-east-1`)
+- **US East** (`us-west-2`)
 - **EU** (`eu-central-1`)
 
 Each region is a completely separate Recall.ai deployment:
@@ -19,7 +19,7 @@ Each region is a completely separate Recall.ai deployment:
 
 | Region | Base URL | Notes |
 | --- | --- | --- |
-| US East | https://us-east-1.recall.ai | `api.recall.ai` is equivalent |
+| US East | https://us-west-2.recall.ai | `api.recall.ai` is equivalent |
 | EU | https://eu-central-1.recall.ai | Pay-as-you-go signup available |
 
 
@@ -68,8 +68,8 @@ Source: https://docs.recall.ai/docs/environments
 // Determine the base URL for a tenant
 function getRecallBaseUrl(region: 'us' | 'eu'): string {
   const urls = {
-    // FillDesk uses us-east-1 as the primary US region (equivalent to api.recall.ai)
-    us: 'https://us-east-1.recall.ai',
+    // FillDesk uses us-west-2 as the primary US region (equivalent to api.recall.ai)
+    us: 'https://us-west-2.recall.ai',
     eu: 'https://eu-central-1.recall.ai',
   };
   return urls[region];

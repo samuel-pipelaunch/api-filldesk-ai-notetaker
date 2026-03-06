@@ -76,7 +76,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ github.ref_name == 'main' && secrets.AWS_ROLE_ARN_PROD_DEPLOY || secrets.AWS_ROLE_ARN_STAGING_DEPLOY }}
-          aws-region: us-east-1
+          aws-region: us-west-2
       - name: Deploy
         run: ./scripts/deploy.sh
 ```

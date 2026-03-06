@@ -55,10 +55,10 @@ $env:AWS_PROFILE = "AdministratorAccess-754437491056"
 ```ini
 [profile AdministratorAccess-754437491056]
 sso_start_url = https://pipelaunch.awsapps.com/start/
-sso_region = us-east-1
+sso_region = us-west-2
 sso_account_id = 754437491056
 sso_role_name = AdministratorAccess
-region = us-east-1
+region = us-west-2
 output = json
 ```
 

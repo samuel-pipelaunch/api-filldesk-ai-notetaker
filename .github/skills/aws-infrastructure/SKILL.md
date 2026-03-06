@@ -42,7 +42,7 @@ Each developer has their own personal AWS dev account. The account above is Sam'
 
 ## AWS Regions
 
-- `us-east-1` (primary)
+- `us-west-2` (primary)
 - `eu-west-1`
 
 ## Table of Contents
@@ -59,7 +59,7 @@ Each developer has their own personal AWS dev account. The account above is Sam'
 | Variable                      | Purpose                                                       |
 | ----------------------------- | ------------------------------------------------------------- |
 | `AWS_PROFILE`                 | Selects local AWS CLI profile for personal dev account access |
-| `AWS_REGION`                  | Active AWS region for local/CI commands (default `us-east-1`) |
+| `AWS_REGION`                  | Active AWS region for local/CI commands (default `us-west-2`) |
 | `AWS_ACCOUNT_ID_DEV`          | Personal dev account ID (for example, Sam: `754437491056`)    |
 | `AWS_ACCOUNT_ID_STAGING`      | Shared staging account ID (`471112515517`)                    |
 | `AWS_ACCOUNT_ID_PROD`         | Shared production account ID (`975050325894`)                 |

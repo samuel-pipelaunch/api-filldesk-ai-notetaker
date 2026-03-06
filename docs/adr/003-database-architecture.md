@@ -26,7 +26,7 @@ Recall.ai workspaces are limited to ~50 per organization and must NOT be used fo
 
 ### Primary Database: Aurora Serverless v2 (PostgreSQL)
 
-One Aurora Serverless v2 PostgreSQL cluster per region (us-east-1, eu-west-1).
+One Aurora Serverless v2 PostgreSQL cluster per region (us-west-2, eu-west-1).
 
 | Property | Value |
 |----------|-------|

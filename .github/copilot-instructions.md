@@ -103,7 +103,7 @@ FillDesk AI Notetaker uses **AWS** with a multi-account stage strategy, deployed
 - **AWS SSO** via Google — Start URL: `https://pipelaunch.awsapps.com/start/#/?tab=accounts`
 - **CI/CD**: GitHub Actions with OIDC authentication to AWS (no long-lived keys)
 - **Environments**: `staging` and `prod` in GitHub Actions (dev is manual deployment)
-- **Regions**: `us-east-1` (primary), `eu-west-1`
+- **Regions**: `us-west-2` (primary), `eu-west-1`
 - **Promotion**: Personal Dev → Staging → Production
 
 ### Infrastructure Skill

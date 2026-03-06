@@ -19,7 +19,7 @@ FillDesk runs backend infrastructure on AWS using a multi-account strategy with 
 
 | Stage              | Account ID   | Purpose                             | Access                                         |
 | ------------------ | ------------ | ----------------------------------- | ---------------------------------------------- |
-| Personal Dev (Sam) | 588738567629 | Individual developer sandbox        | `AdministratorAccess-588738567629` SSO profile |
+| Personal Dev (Sam) | 754437491056 | Individual developer sandbox        | `AdministratorAccess-754437491056` SSO profile |
 | Staging            | 471112515517 | Pre-production, integration testing | Shared team access via SSO                     |
 | Production         | 975050325894 | Live customer-facing environment    | Restricted, deployment via CI/CD only          |
 
@@ -60,7 +60,7 @@ Each developer has their own personal AWS dev account. The account above is Sam'
 | ----------------------------- | ------------------------------------------------------------- |
 | `AWS_PROFILE`                 | Selects local AWS CLI profile for personal dev account access |
 | `AWS_REGION`                  | Active AWS region for local/CI commands (default `us-east-1`) |
-| `AWS_ACCOUNT_ID_DEV`          | Personal dev account ID (for example, Sam: `588738567629`)    |
+| `AWS_ACCOUNT_ID_DEV`          | Personal dev account ID (for example, Sam: `754437491056`)    |
 | `AWS_ACCOUNT_ID_STAGING`      | Shared staging account ID (`471112515517`)                    |
 | `AWS_ACCOUNT_ID_PROD`         | Shared production account ID (`975050325894`)                 |
 | `AWS_DEPLOY_ROLE_ARN_STAGING` | IAM role ARN assumed by GitHub Actions for staging deploys    |

@@ -14,7 +14,7 @@ FillDesk uses three account tiers:
 
 | Stage | Account Type | Account ID | Purpose | Sharing Model |
 | --- | --- | --- | --- | --- |
-| Personal Dev (Sam) | Developer sandbox | 588738567629 | Fast iteration, local testing, feature validation | Not shared |
+| Personal Dev (Sam) | Developer sandbox | 754437491056 | Fast iteration, local testing, feature validation | Not shared |
 | Staging | Shared pre-production | 471112515517 | Integration testing and release validation | Shared by team |
 | Production | Shared live environment | 975050325894 | Customer-facing workloads | Restricted access |
 

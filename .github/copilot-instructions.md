@@ -94,7 +94,7 @@ FillDesk AI Notetaker uses **AWS** with a multi-account stage strategy, deployed
 
 | Stage        | Account ID                           | Purpose            |
 | ------------ | ------------------------------------ | ------------------ |
-| Personal Dev | Per-developer (e.g., `588738567629`) | Individual sandbox |
+| Personal Dev | Per-developer (e.g., `754437491056`) | Individual sandbox |
 | Staging      | `471112515517`                       | Pre-production     |
 | Production   | `975050325894`                       | Live environment   |
 

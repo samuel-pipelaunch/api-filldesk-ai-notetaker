@@ -24,7 +24,7 @@ Use role-and-account aligned profile names where possible.
 
 Examples:
 
-- Sam personal dev account: `AdministratorAccess-588738567629`
+- Sam personal dev account: `AdministratorAccess-754437491056`
 - Staging account role profile: `AdministratorAccess-471112515517`
 - Production account role profile: `AdministratorAccess-975050325894`
 
@@ -41,22 +41,22 @@ aws sso login --profile <profile>
 Set `AWS_PROFILE` to choose the active account/role for local development.
 
 ```bash
-export AWS_PROFILE=AdministratorAccess-588738567629
+export AWS_PROFILE=AdministratorAccess-754437491056
 ```
 
 PowerShell:
 
 ```powershell
-$env:AWS_PROFILE = "AdministratorAccess-588738567629"
+$env:AWS_PROFILE = "AdministratorAccess-754437491056"
 ```
 
 ## Example ~/.aws/config
 
 ```ini
-[profile AdministratorAccess-588738567629]
+[profile AdministratorAccess-754437491056]
 sso_start_url = https://pipelaunch.awsapps.com/start/
 sso_region = us-east-1
-sso_account_id = 588738567629
+sso_account_id = 754437491056
 sso_role_name = AdministratorAccess
 region = us-east-1
 output = json

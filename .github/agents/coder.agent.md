@@ -12,6 +12,7 @@ tools:
     "fetch",
     "findTestFiles",
     "githubRepo",
+    "todo",
   ]
 ---
 

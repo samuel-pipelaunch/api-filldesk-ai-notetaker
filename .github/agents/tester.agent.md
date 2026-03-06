@@ -11,6 +11,7 @@ tools:
     "runInTerminal",
     "findTestFiles",
     "fetch",
+    "githubRepo",
   ]
 ---
 

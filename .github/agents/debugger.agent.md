@@ -10,6 +10,8 @@ tools:
     "terminalLastCommand",
     "runInTerminal",
     "findTestFiles",
+    "fetch",
+    "githubRepo",
   ]
 ---
 

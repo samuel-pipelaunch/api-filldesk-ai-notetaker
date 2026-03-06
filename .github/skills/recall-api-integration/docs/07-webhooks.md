@@ -68,7 +68,8 @@ Sample app: https://github.com/recallai/sample-apps/tree/main/verify_requests_fr
 ### Setup
 
 1. Create workspace verification secret from dashboard: Developers → API Keys & Secrets → Create Workspace Secret
-2. All requests will include headers: `webhook-id`, `webhook-timestamp`, `webhook-signature`
+2. Each region workspace has its own secret: `RECALL_WEBHOOK_SECRET_US` and `RECALL_WEBHOOK_SECRET_EU`
+3. All requests will include headers: `webhook-id`, `webhook-timestamp`, `webhook-signature`
 
 ### Verification Function (TypeScript)
 

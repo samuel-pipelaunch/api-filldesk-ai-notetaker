@@ -36,6 +36,7 @@ Each FillDesk tenant is assigned to either a US or EU Recall region.
 - Store `recall_region` for each tenant in our database
 - Route all API calls to the tenant’s assigned region base URL
 - Use separate API keys per region (`RECALL_API_KEY_US`, `RECALL_API_KEY_EU`)
+- Use separate webhook secrets per region (`RECALL_WEBHOOK_SECRET_US`, `RECALL_WEBHOOK_SECRET_EU`)
 - Treat each Recall region as a separate workspace domain with its own settings, webhooks, and credentials
 
 ### 2) Custom Metadata for Tenant Tagging
@@ -53,12 +54,22 @@ Source: https://docs.recall.ai/docs/custom-metadata
 
 ### 3) Workspaces by Environment
 
-Use separate Recall workspaces for development lifecycle environments (dev, staging, production).
+FillDesk uses **one Recall.ai workspace per stage, per region** (6 total):
+
+| Stage        | Workspace Name     | US Region              | EU Region                |
+| ------------ | ------------------ | ---------------------- | ------------------------ |
+| Personal Dev | "PipeLaunch GmbH"  | `RECALL_API_KEY_US`    | `RECALL_API_KEY_EU`      |
+| Staging      | "staging"           | `RECALL_API_KEY_US`    | `RECALL_API_KEY_EU`      |
+| Production   | "prod"              | `RECALL_API_KEY_US`    | `RECALL_API_KEY_EU`      |
+
+Key rules:
 
 - Workspaces isolate bot data, webhook URLs, calendars, platform credentials, and transcription credentials
-- Recall allows up to 50 workspaces per organization
+- Recall allows up to 50 workspaces per organization (we use 3 per region = 6 total)
+- Each workspace has its **own API key** and **own webhook verification secret**
+- The env var names (`RECALL_API_KEY_US`, `RECALL_API_KEY_EU`, `RECALL_WEBHOOK_SECRET_US`, `RECALL_WEBHOOK_SECRET_EU`) are the same across stages — the values differ per deployment
 - Do **not** use workspaces to isolate end-customer data
-- End-customer isolation must be implemented by FillDesk
+- End-customer isolation must be implemented by FillDesk at the application layer
 
 Source: https://docs.recall.ai/docs/environments
 
@@ -84,6 +95,17 @@ function getRecallApiKey(region: 'us' | 'eu'): string {
   const key = keys[region];
   if (!key) throw new Error(`Missing RECALL_API_KEY for region: ${region}`);
   return key;
+}
+
+// Get the webhook verification secret for a region
+function getRecallWebhookSecret(region: 'us' | 'eu'): string {
+  const secrets = {
+    us: process.env.RECALL_WEBHOOK_SECRET_US,
+    eu: process.env.RECALL_WEBHOOK_SECRET_EU,
+  };
+  const secret = secrets[region];
+  if (!secret) throw new Error(`Missing RECALL_WEBHOOK_SECRET for region: ${region}`);
+  return secret;
 }
 ```
 

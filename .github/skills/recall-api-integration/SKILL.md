@@ -43,9 +43,22 @@ For FillDesk AI Notetaker, our integration choices are:
 | ---------------------------- | ---------------------------------------------------------------------------------------------- |
 | `RECALL_API_KEY_US`          | API key for US region (`us-west-2.recall.ai` primary US region, equivalent to `api.recall.ai`) |
 | `RECALL_API_KEY_EU`          | API key for EU region (`eu-central-1.recall.ai`)                                               |
-| `RECALL_WEBHOOK_SECRET`      | Workspace verification secret for webhook verification                                         |
+| `RECALL_WEBHOOK_SECRET_US`   | Webhook verification secret for US region workspace                                            |
+| `RECALL_WEBHOOK_SECRET_EU`   | Webhook verification secret for EU region workspace                                            |
 | `GOOGLE_OAUTH_CLIENT_ID`     | Google OAuth 2.0 client ID                                                                     |
 | `GOOGLE_OAUTH_CLIENT_SECRET` | Google OAuth 2.0 client secret                                                                 |
+
+## Recall.ai Workspace Strategy
+
+FillDesk uses **one Recall.ai workspace per stage, per region** (6 total):
+
+| Stage        | Workspace Name    | US API Key          | EU API Key          |
+| ------------ | ----------------- | ------------------- | ------------------- |
+| Personal Dev | "PipeLaunch GmbH" | `RECALL_API_KEY_US` | `RECALL_API_KEY_EU` |
+| Staging      | "staging"         | `RECALL_API_KEY_US` | `RECALL_API_KEY_EU` |
+| Production   | "prod"            | `RECALL_API_KEY_US` | `RECALL_API_KEY_EU` |
+
+The env var names are the same across stages — the **values** differ per deployment environment.
 
 ## Recall.ai API Base URLs
 
